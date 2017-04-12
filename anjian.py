@@ -56,10 +56,14 @@ win32gui.PostMessage(document, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
 time.sleep(.2)
 '''
 #e-booking
-docuwindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1','Document ApplicationNBZRP0')
-bookingwindow = win32gui.FindWindowEx(docuwindow,0,'WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1','Accept E-booking')
-print bookingwindow
-print find_idxSubHandle(bookingwindow,'WindowsForms10.EDIT.app.0.2a2cc74_r9_ad1',1)
+docuwindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Document ApplicationNBZRP0')
+backwindow = win32gui.FindWindowEx(docuwindow,0,'WindowsForms10.MDICLIENT.app.0.3b93019_r11_ad1',None)
+bookingwindow = win32gui.FindWindowEx(backwindow,0,'WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Accept E-booking')
+for i in range(10):
+    print find_idxSubHandle(bookingwindow,'WindowsForms10.Window.8.app.0.3b93019_r11_ad1',i)
+bookingtitle = find_idxSubHandle(bookingwindow,'WindowsForms10.Window.8.app.0.3b93019_r11_ad1',4)
+print bookingtitle
+
 # voyageinput = find_idxSubHandle(bookingwindow,'WindowsForms10.EDIT.app.0.2a2cc74_r9_ad1',0)
 # win32gui.SendMessage(vesselinput, win32con.WM_SETTEXT,None,'hu')
 # time.sleep(.2)
