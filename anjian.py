@@ -3,6 +3,7 @@ import win32api
 import win32con
 import win32gui
 import time
+from constant import *
 '''
 def runApp():
     import win32api
@@ -86,7 +87,7 @@ def enterdocu(documenttest):
     win32gui.PostMessage(documenttest, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
     time.sleep(2)
 
-for i in range(2):
+for i in range(8):
     enterdocu(document)
 
 docuwindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1','Document ApplicationNBZRP0')
@@ -108,6 +109,6 @@ def getwindow(vessel,voyage):
     win32gui.ShowWindow(bookingwindow, win32con.SW_MINIMIZE)
     time.sleep(2)
 
-getwindow("SNLDFFG","1708S")
-getwindow("SITSISU","1707N")
 
+for i,j in weekdict.viewitems():    
+    getwindow(j[0],j[1])
