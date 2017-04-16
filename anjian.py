@@ -39,6 +39,8 @@ def find_subHandle(pHandle, winClassList):
         pHandle = find_idxSubHandle(pHandle, winClassList[0][0], winClassList[0][1])
         return find_subHandle(pHandle, winClassList[1:])  
 
+starttime = time.time()        
+
 #窗体句柄
 loginwindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1','Login')
 #控件句柄
@@ -105,10 +107,18 @@ def getwindow(vessel,voyage):
     win32gui.SendMessage(vslinput, win32con.WM_SETTEXT,None,vessel)
     time.sleep(.1)
     win32gui.SendMessage(voyinput, win32con.WM_SETTEXT,None,voyage)
-    win32gui.SendMessage(retrieve,win32con.BM_CLICK,None,None)
-    win32gui.ShowWindow(bookingwindow, win32con.SW_MINIMIZE)
+    try:
+        win32gui.PostMessage(retrieve,win32con.BM_CLICK,None,None)
+        time.sleep(.8)  
+    finally:
+        aa = win32gui.FindWindow('#32770',None)
+        win32gui.PostMessage(aa, win32con.WM_KEYDOWN, win32con.VK_RETURN, 0)
+        win32gui.PostMessage(aa, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
+        win32gui.ShowWindow(bookingwindow, win32con.SW_MINIMIZE)
     time.sleep(2)
 
 
 for i,j in weekdict.viewitems():    
     getwindow(j[0],j[1])
+    
+print u"共用时%s"%(time.time()-starttime)
