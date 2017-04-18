@@ -14,7 +14,7 @@ CPS = ("SNLISAO","1708S")
 
 SK3 = ("EASSIAI","1717E")
 
-CTI = ("YMLPRRN","012S")
+CTI = ("YMLLOND","075S")
 
 vessellist = ["NKT1","NJ1","NEAX","CAT","CPF","CPS","SK3","CTI"]
 
