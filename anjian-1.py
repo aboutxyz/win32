@@ -57,11 +57,10 @@ win32gui.SendMessage(passinput, win32con.WM_SETTEXT,None,PASSWORD)
 win32gui.PostMessage(userinput, win32con.WM_KEYDOWN, win32con.VK_RETURN, 0)
 time.sleep(.2)
 win32gui.PostMessage(userinput, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
-time.sleep(3)
+time.sleep(5)
 
 #进入模块选择
 modulewindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Application Project')
-time.sleep(1)
 docuchoice = find_idxSubHandle(modulewindow,'WindowsForms10.BUTTON.app.0.3b93019_r11_ad1',10)
 win32gui.SendMessage(docuchoice,win32con.BM_CLICK,None,None)
 time.sleep(3)
@@ -87,7 +86,7 @@ def enterdocu(documenttest):
         time.sleep(.3)
     win32gui.PostMessage(documenttest, win32con.WM_KEYDOWN, win32con.VK_RETURN, 0)
     win32gui.PostMessage(documenttest, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
-    time.sleep(2)
+    time.sleep(3)
 
 for i in range(8):
     enterdocu(document)
@@ -115,7 +114,7 @@ def getwindow(vessel,voyage):
         win32gui.PostMessage(aa, win32con.WM_KEYDOWN, win32con.VK_RETURN, 0)
         win32gui.PostMessage(aa, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
         win32gui.ShowWindow(bookingwindow, win32con.SW_MINIMIZE)
-    time.sleep(2)
+    time.sleep(3)
 
 
 for i,j in weekdict.viewitems():    
