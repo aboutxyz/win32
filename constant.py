@@ -8,7 +8,7 @@ NEAX = ("YMLOOAS","134S")
 
 CAT = ("YMLBUAN","070S")
 
-CPF = ("SNLDFFG","1708S")
+CPF = ("WHLIPSA","S015")
 
 CPS = ("SNLISAO","1708S")
 

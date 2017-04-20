@@ -63,7 +63,7 @@ time.sleep(5)
 modulewindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Application Project')
 docuchoice = find_idxSubHandle(modulewindow,'WindowsForms10.BUTTON.app.0.3b93019_r11_ad1',10)
 win32gui.SendMessage(docuchoice,win32con.BM_CLICK,None,None)
-time.sleep(3)
+time.sleep(5)
      
 documodule = win32gui.FindWindow('WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Document ApplicationNBZRP0')
 document = win32gui.FindWindowEx(documodule,0,'WindowsForms10.Window.8.app.0.3b93019_r11_ad1','menuStrip1')

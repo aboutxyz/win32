@@ -14,15 +14,16 @@ def find_idxSubHandle(pHandle, winClass, index=0):
         index -= 1
     return handle
 
-docuwindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1','Document ApplicationNBZRP0')
-backwindow = win32gui.FindWindowEx(docuwindow,0,'WindowsForms10.MDICLIENT.app.0.2a2cc74_r9_ad1',None)
-bookingwindow = win32gui.FindWindowEx(backwindow,0,'WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1','Accept E-booking')
-bookingtitle = find_idxSubHandle(bookingwindow,'WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1',4)
-retrieve = win32gui.FindWindowEx(bookingtitle,0,'WindowsForms10.BUTTON.app.0.2a2cc74_r9_ad1','Retrieve')
-showdeail = find_idxSubHandle(bookingtitle, 'WindowsForms10.BUTTON.app.0.2a2cc74_r9_ad1',1)
+docuwindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Document ApplicationNBZRP0')
+backwindow = win32gui.FindWindowEx(docuwindow,0,'WindowsForms10.MDICLIENT.app.0.3b93019_r11_ad1',None)
+bookingwindow = win32gui.FindWindowEx(backwindow,0,'WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Accept E-booking')
+win32gui.SetForegroundWindow(docuwindow)
+bookingtitle = find_idxSubHandle(bookingwindow,'WindowsForms10.Window.8.app.0.3b93019_r11_ad1',4)
+retrieve = win32gui.FindWindowEx(bookingtitle,0,'WindowsForms10.BUTTON.app.0.3b93019_r11_ad1','Retrieve')
+showdeail = find_idxSubHandle(bookingtitle, 'WindowsForms10.BUTTON.app.0.3b93019_r11_ad1',1)
 def confirmfunc():
-    confirmwindow = find_idxSubHandle(bookingwindow, 'WindowsForms10.Window.8.app.0.2a2cc74_r9_ad1',0)
-    repending = find_idxSubHandle(confirmwindow, 'WindowsForms10.Window.b.app.0.2a2cc74_r9_ad1',1)
+    confirmwindow = find_idxSubHandle(bookingwindow, 'WindowsForms10.Window.8.app.0.3b93019_r11_ad1',0)
+    repending = find_idxSubHandle(confirmwindow, 'WindowsForms10.Window.b.app.0.3b93019_r11_ad1',1)
     try:
         win32gui.PostMessage(repending,win32con.WM_LBUTTONDOWN,None,None)
         win32gui.PostMessage(repending,win32con.WM_LBUTTONUP,None,None)
