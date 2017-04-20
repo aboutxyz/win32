@@ -4,6 +4,7 @@ import win32con
 import win32gui
 import time
 from constant import *
+import concurrent.futures
   
 def find_idxSubHandle(pHandle, winClass, index=0):
     """已知子窗口的窗体类名 寻找第index号个同类型的兄弟窗口"""
@@ -41,8 +42,14 @@ def confirmfunc():
         shi2 = find_idxSubHandle(queren,'Button',0)
         print hex(shi2)
         win32gui.PostMessage(shi2,win32con.BM_CLICK,None,None)
-n = 15
-while n>0:
-    n = n-1
-    confirmfunc()
-    time.sleep(2)
+# n = 15
+# while n>0:
+    # n = n-1
+    # confirmfunc()
+    # time.sleep(2)
+    
+    
+with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+    for i in range(10):
+        aa=executor.submit(confirmfunc,)
+        aa.result()
