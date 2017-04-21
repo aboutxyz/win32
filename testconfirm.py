@@ -50,6 +50,6 @@ def confirmfunc():
     
     
 with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-    for i in range(10):
+    for i in range(20):
         aa=executor.submit(confirmfunc,)
         aa.result()

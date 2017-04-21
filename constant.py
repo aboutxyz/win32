@@ -1,12 +1,12 @@
 #coding:utf-8
 
-NKT1 = ("PANMIUM","233E")
+NKT1 = ("PANMIUM","234E")
 
-NJ1 = ("SITSHAI","1707N")
+NJ1 = ("SITLING","1709N")
 
 NEAX = ("YMLOOAS","134S")
 
-CAT = ("YMLBUAN","070S")
+CAT = ("YMLYMND","082S")
 
 CPF = ("WHLIPSA","S015")
 
