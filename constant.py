@@ -4,17 +4,17 @@ NKT1 = ("PANMIUM","234E")
 
 NJ1 = ("SITLING","1709N")
 
-NEAX = ("YMLOOAS","134S")
+NEAX = ("YMLYSEA","074S")
 
 CAT = ("YMLYMND","082S")
 
-CPF = ("WHLIPSA","S015")
+CPF = ("SNLDFFG","1709S")
 
-CPS = ("SNLISAO","1708S")
+CPS = ("SITLALA","1708S")
 
-SK3 = ("EASSIAI","1717E")
+SK3 = ("EASSIAI","1718E")
 
-CTI = ("YMLLOND","075S")
+CTI = ("YMLNADE","039S")
 
 vessellist = ["NKT1","NJ1","NEAX","CAT","CPF","CPS","SK3","CTI"]
 
