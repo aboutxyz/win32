@@ -1,20 +1,20 @@
 #coding:utf-8
 
-NKT1 = ("PANMIUM","234E")
+NKT1 = ("PANMIUM","236E")
 
-NJ1 = ("SITLING","1709N")
+NJ1 = ("SITSIGU","1709N")
 
-NEAX = ("YMLYSEA","074S")
+NEAX = ("YMLMOST","051S")
 
-CAT = ("YMLYMND","082S")
+CAT = ("SNLNOPS","1704S")
 
-CPF = ("SNLDFFG","1709S")
+CPF = ("WHLIPSA","S016")
 
-CPS = ("SITLALA","1708S")
+CPS = ("SITLALA","1709S")
 
-SK3 = ("EASSIAI","1718E")
+SK3 = ("EASEABU","1720E")
 
-CTI = ("YMLNADE","039S")
+CTI = ("YMLLOND","076S")
 
 vessellist = ["NKT1","NJ1","NEAX","CAT","CPF","CPS","SK3","CTI"]
 
