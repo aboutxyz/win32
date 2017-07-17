@@ -37,6 +37,7 @@ def confirmfunc():
             win32gui.PostMessage(shi, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
             time.sleep(2)
             aa = win32gui.FindWindow('#32770','Warning')
+        time.sleep(1)
         queren = win32gui.FindWindow('#32770',None)
         print hex(queren)
         shi2 = find_idxSubHandle(queren,'Button',0)
