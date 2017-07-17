@@ -37,17 +37,45 @@ def find_subHandle(pHandle, winClassList):
     else:
         pHandle = find_idxSubHandle(pHandle, winClassList[0][0], winClassList[0][1])
         return find_subHandle(pHandle, winClassList[1:])  
+def get_child_windows(parent):        
+    '''     
+    获得parent的所有子窗口句柄
+     返回子窗口句柄列表
+     '''     
+    if not parent:         
+        return      
+    hwndChildList = []     
+    win32gui.EnumChildWindows(parent, lambda hwnd, param: param.append(hwnd),  hwndChildList)          
+    return hwndChildList 
+    
+def top_windows():
+    '''
+    演示如何列出所有的顶级窗口
+    :return:
+    '''
+    hWndList = []
+    win32gui.EnumWindows(lambda hWnd, param: param.append(hWnd), hWndList)
+ 
+    return hWndList
+   
 
 starttime = time.time()        
 
-#进入模块选择
-for i in range(15):
-    modulewindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.3b93019_r11_ad1','Calculate Message')
-    ttt = find_idxSubHandle(modulewindow,"WindowsForms10.Window.b.app.0.3b93019_r11_ad1",0)
-    print ttt
+#进入模块选择  WindowsForms10.Window.8.app.0.2f5a4f0_r9_ad1 WindowsForms10.Window.b.app.0.2f5a4f0_r9_ad1    WindowsForms10.Window.8.app.0.3b93019_r11_ad1  WindowsForms10.Window.b.app.0.3b93019_r11_ad1
+docuwindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.2f5a4f0_r9_ad1','Document ApplicationNBZRP0')
+for i in range(25):
+    # modulewindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.2f5a4f0_r9_ad1','Calculate Message')
+    # win32gui.SetForegroundWindow(i)
+    modulewindow = win32gui.FindWindow('WindowsForms10.Window.8.app.0.2f5a4f0_r9_ad1','Calculate Message')
+    win32gui.SetForegroundWindow(modulewindow)
+    print hex(modulewindow)
+    ttt = find_idxSubHandle(modulewindow,"WindowsForms10.Window.b.app.0.2f5a4f0_r9_ad1",0)
+    print hex(ttt)
+    # win32gui.SendMessage(ttt,win32con.BM_CLICK,None,None)
     win32gui.PostMessage(ttt, win32con.WM_KEYDOWN, win32con.VK_RETURN, 0)
     win32gui.PostMessage(ttt, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
-    time.sleep(1)
+    time.sleep(2)
+
 
     
 print u"共用时%s"%(time.time()-starttime)
